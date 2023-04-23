@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./app.js" defer></script>
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form">
+        <div class="form__grp">
+          <label for="day">Day</label>
+          <input type="number" id="day" name="day" placeholder="DD" />
+          <p id="day__error-msg" class="error__msg"></p>
+        </div>
+        <div class="form__grp">
+          <label for="month">Month</label>
+          <input type="number" id="month" name="month" placeholder="MM" />
+          <p id="month__error-msg" class="error__msg"></p>
+        </div>
+        <div class="form__grp">
+          <label for="year">Year</label>
+          <input type="number" id="year" name="year" placeholder="YYYY" />
+          <p id="year__error-msg" class="error__msg"></p>
+        </div>
+        <button type="submit">
+          <img src="./images/icon-arrow.svg" alt="arrow down icon" />
+        </button>
+
+        <div class="border-b"></div>
+      </form>
+      <div class="results">
+        <h1><span class="years">--</span> <span>years</span></h1>
+        <h1><span class="months">--</span> <span>months</span></h1>
+        <h1><span class="days">--</span> <span>days</span></h1>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</html>

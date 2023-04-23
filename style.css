@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "Poppins-400";
+  src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins-i";
+  src: url(./assets/fonts/Poppins-Italic.ttf);
+}
+@font-face {
+  font-family: "Poppins-700";
+  src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins-700-i";
+  src: url(./assets/fonts/Poppins-BoldItalic.ttf);
+}
+@font-face {
+  font-family: "Poppins-800";
+  src: url(./assets/fonts/Poppins-ExtraBold.ttf);
+}
+@font-face {
+  font-family: "Poppins-800-i";
+  src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf);
+}
+:root {
+  --clr-purple: hsl(259, 100%, 65%);
+  --clr-red: hsl(0, 100%, 67%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-off-white: hsl(0, 0%, 94%);
+  --clr-light-grey: hsl(0, 0%, 86%);
+  --clr-smokey-grey: hsl(0, 1%, 44%);
+  --clr-off-black: hsl(0, 0%, 8%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--clr-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.container {
+  transform-origin: top;
+  width: 60%;
+  height: 90vh;
+  background-color: var(--clr-white);
+  border-radius: 20px;
+  border-bottom-right-radius: 148px;
+  padding: 48px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 64px;
+  position: relative;
+}
+.border-b {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    var(--clr-light-grey) 100%,
+    var(--clr-purple) 0%
+  );
+  transform-origin: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.form__grp {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.form__grp label {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--clr-smokey-grey);
+  margin-bottom: 8px;
+  transition: color 200ms;
+}
+
+.form__grp.error label {
+  color: var(--clr-red);
+}
+
+.form__grp input {
+  width: 160px;
+  cursor: pointer;
+  font-size: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--clr-light-grey);
+  font-family: "Poppins-700";
+  padding: 12px 24px;
+  transition: border-color 250ms;
+}
+
+.form__grp input:focus {
+  outline: none;
+  border-color: var(--clr-purple);
+}
+
+/* Error style for field */
+.form__grp.error input,
+.form__grp.error input:focus {
+  border-color: var(--clr-red);
+}
+.error__msg {
+  font-size: 14px;
+  color: var(--clr-red);
+  font-family: "Poppins-i";
+  position: absolute;
+  bottom: -32px;
+}
+.form button {
+  z-index: 100;
+  position: absolute;
+  right: -4px;
+  bottom: -50%;
+  transform: translate(0%, -50%) !important;
+  width: 80px;
+  height: 80px;
+  background-color: var(--clr-purple);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  transition: background-color 250ms;
+}
+.form button:hover {
+  background-color: var(--clr-off-black);
+}
+.results {
+  padding-top: 24px;
+}
+.results h1 {
+  color: var(--clr-off-black);
+  font-size: 64px;
+  font-family: "Poppins-800-i";
+  line-height: 1.25;
+}
+.results h1 span:first-child {
+  /* display: inline-block; */
+  font-size: 72px;
+  /* width: 80px; */
+  margin-right: 24px;
+  color: var(--clr-purple);
+  font-family: "Poppins-800-i";
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 95%;
+    height: auto;
+    padding: 48px 24px;
+    border-bottom-right-radius: 98px;
+  }
+  .form {
+    gap: 12px;
+    padding-bottom: 80px;
+  }
+  .border-b {
+    transform-origin: center;
+  }
+  .form input {
+    width: 100%;
+    font-size: 24px;
+    padding-inline: 16px;
+  }
+  .form button {
+    display: grid;
+    place-items: center;
+    right: 50%;
+    transform: translate(50%, -50%) !important;
+  }
+  .form button img {
+    width: 75%;
+  }
+  .results {
+    padding-top: 64px;
+  }
+  .results h1 {
+    font-size: 54px;
+  }
+  .results h1 span:first-child {
+    display: inline-block;
+    font-size: inherit;
+    width: auto;
+    margin-right: 0;
+  }
+}
